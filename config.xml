@@ -1,24 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns		= "http://www.w3.org/ns/widgets"
-	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.phonegap.getting.started"
-	version 	= "1.0.0">
-
-	<name>PhoneGap: Getting Started</name>
-
-	<description>
-		A template for getting started with PhoneGap development and build.phonegap.com
-	</description>
-
-	<author href="http://alunny.github.com"
-		email="andrew.lunny@nitobi.com">
-		Andrew Lunny
-	</author>
-
-	<icon src="icon.png" gap:role="default" />
-
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
-	<feature name="http://api.phonegap.com/1.0/network"/>
-
-	<preference name="orientation" value="portrait" />
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ionicframework.weather" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>IonicWeather</name>
+    <description>
+        A sample Ionic Weather app
+    </description>
+    <author email="max@drifty.com" href="http://ionicframework.com">
+      Drifty
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
 </widget>
