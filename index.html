@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Ionic Seed App</title>
+    <meta charset="utf-8" />
+    <title>Weather App</title>
 
-    <!-- ionic css -->
-    <link href="lib/css/ionic.css" rel="stylesheet">
-
-    <!-- your app's css -->
-    <link href="css/app.css" rel="stylesheet">
-    <link href="css/ionic.contrib.frostedGlass.css" rel="stylesheet">
-
-    <!-- angularjs scripts -->
-    <script src="lib/js/ionic.js"></script>
-    <script src="lib/js/angular/angular.js"></script>
-    <script src="lib/js/angular/angular-animate.js"></script>
-    <script src="lib/js/angular/angular-sanitize.js"></script>
-    <script src="lib/js/angular-ui/angular-ui-router.js"></script>
-    <script src="lib/js/ionic-angular.js"></script>
-
-    <!-- cordova script -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
+    <script src="http://localhost:8001/target/target-script-min.js"></script>
     <script src="cordova.js"></script>
-
-    <!-- your app's script -->
-    <script src="js/app.js"></script>
-    <script src="js/ionic.contrib.frostedGlass.js"></script>
+    <script src="js/app.min.js"></script>
   </head>
+  <body ng-app="WeatherApp" ng-controller="MainController">
 
-  <!-- 
-    'starter' is the name of this angular module (js/app.js)
-  -->
-  <body ng-app="starter" animation="slide-left-right-ios7">
+    <!-- Sidebars -->
+    <div ng-include="'sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
 
-    <ion-pane ng-controller="PageCtrl">
-      <ion-header-bar frosted-bar title="'Blurred...man!'" type="bar-frosted"></ion-header-bar>
-      <ion-content has-header="true" has-footer="true" padding="true" start-y="120">
-        <ol class="messages">
-					<li ng-repeat="message in messages" ion-bind-html-unsafe="message.content">
-					</li>
-				</ol>
-      </ion-content>
-      <footer class="bar bar-footer bar-frosted">
-        <button class="button button-clear button-positive" ng-click="add()">Add Message</button>
-      </footer>
-    </pane>
+    <div class="app">
+
+      <!-- Navbars -->
+
+      <div class="navbar navbar-app navbar-absolute-top">
+        <div class="navbar-brand navbar-brand-center" yield-to="title">
+          <span>Weather App</span>
+        </div>
+        <div class="btn-group pull-left">
+          <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
+            <i class="fa fa-bars"></i> Menu
+          </div>
+        </div>
+        <div class="btn-group pull-right" yield-to="navbarAction">
+        </div>
+      </div>
+
+      <div class="navbar navbar-app navbar-absolute-bottom">
+        <div class="btn-group justified">
+        </div>
+      </div>
+      
+      <!-- App Body -->
+      <div class="app-body">
+        <ng-view class="app-content"></ng-view>
+      </div>
+    </div><!-- ~ .app -->
   </body>
 </html>
